@@ -36,10 +36,10 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -96,4 +96,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cl='/opt/coreutils/bin/ls'
+# alias ll='ls -alhF'
+alias la='ls -A'
+alias l='ls -CF'
+alias an='cd ~/code/ansible'
+alias ad='cd ~/code/erezadmin'
+alias hx='hexdump -C'
+alias nv='cd ~/.config/nvim'
+alias n='nvim'
+alias nq='nvim-qt'
+alias c='clear'
+alias s='sudo'
+alias venv='source ./venv/bin/activate.fish'
+alias :e='nvim'
+alias g='git'
+
 export BAT_PAGER="less -RF"
