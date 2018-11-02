@@ -112,4 +112,4 @@ alias venv='source ./venv/bin/activate.fish'
 alias :e='nvim'
 alias g='git'
 
-export BAT_PAGER="less -RF"
+export BAT_PAGER="less"
