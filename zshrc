@@ -117,3 +117,5 @@ alias :e='nvim'
 alias g='git'
 
 export BAT_PAGER="less"
+source /home/derek/zshell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/derek/zshell/zsh-autosuggestions/zsh-autosuggestions.zsh
