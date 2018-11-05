@@ -115,6 +115,8 @@ alias s='sudo'
 alias venv='source ./venv/bin/activate.fish'
 alias :e='nvim'
 alias g='git'
+alias ez='cd ~/code/erezlife'
+alias an='cd ~/code/ansible'
 
 export BAT_PAGER="less"
 source /home/derek/zshell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
