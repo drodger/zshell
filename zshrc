@@ -68,11 +68,19 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  ssh-agent
-  tmux
-  zsh-syntax-highlighting
-  zsh-autosuggestions
+    aws
+    colored-man-pages
+    command-not-found
+    common-aliases
+    django
+    fd
+    fzf
+    git
+    git-prompt
+    ssh-agent
+    tmux
+    zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
