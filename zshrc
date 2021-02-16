@@ -1,5 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.cargo/bin:/usr/local/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/derek/.oh-my-zsh"
@@ -34,7 +38,7 @@ ZSH_THEME="agnoster"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -96,7 +100,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id:~/.ssh/drodger_github_rsa"
 EXTENDED_HISTORY="true"
 APPEND_HISTORY="true"
 AUTO_CD="true"
-SHARE_HISTORY="false"
+# SHARE_HISTORY="false"
+setopt noincappendhistory
+setopt nosharehistory
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -123,7 +129,39 @@ alias :e='nvim'
 alias g='git'
 alias ez='cd ~/code/erezlife'
 alias an='cd ~/code/ansible'
-
+alias testpy='venv/bin/python -b -Wall manage.py test --no-input --keepdb --parallel'
+alias psql='psql -d rcr'
 export BAT_PAGER="less"
 source /home/derek/zshell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/derek/zshell/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/derek/code/erezlife/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/derek/code/erezlife/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/derek/code/erezlife/node_modules/tabtab/.completions/sls.zsh ]] && . /home/derek/code/erezlife/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/derek/code/erezlife/node_modules/tabtab/.completions/slss.zsh ]] && . /home/derek/code/erezlife/node_modules/tabtab/.completions/slss.zsh
+
+export EREZLIFE_CONFIG_HOST="localhost"
+export EREZLIFE_CONFIG_KEY="localhost"
+export EREZLIFE_HOST="localhost"
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+eval "$(starship init zsh)"
+
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /home/derek/.config/broot/launcher/bash/br
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
