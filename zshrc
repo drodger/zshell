@@ -76,7 +76,6 @@ plugins=(
     fd
     fzf
     git
-    git-prompt
     ssh-agent
     tmux
     zsh-syntax-highlighting
@@ -140,8 +139,6 @@ alias an='cd ~/code/ansible'
 alias testpy='venv/bin/python -b -Wall manage.py test --no-input --keepdb --parallel'
 alias psql='psql -d rcr'
 export BAT_PAGER="less"
-source /home/derek/zshell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/derek/zshell/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
